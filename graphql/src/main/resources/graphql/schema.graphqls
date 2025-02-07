@@ -1,0 +1,22 @@
+schema {
+    query: Query,
+    mutation: Mutation,
+}
+
+type Book {
+    id: ID!
+    title: String!
+    author: String!
+    price: Int!
+    publisher: String!
+}
+
+type Query {
+    books: [Book]
+    book(id: ID!): Book
+}
+
+type Mutation {
+    addBook(title: String!, author: String!, price: Int!, publisher: String!): Book
+    updateBook(id: ID!, title: String, author: String, price: Int, publisher: String): Book
+}
